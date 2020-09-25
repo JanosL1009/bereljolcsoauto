@@ -1,0 +1,34 @@
+
+/*My Style's*/
+
+.egyedi_font {
+    font-family: 'Roboto', sans-serif;
+}
+.mainBody{
+    background-color: #0081DF;
+}
+
+.FooterColor{
+    background-color: #e1e1e1;
+}
+
+.footerLinkItem{
+    color: #000; font-size: 14px;
+}
+
+.newH4Color{
+    color: #FBC02D;font-weight: bolder; text-align: center;
+}
+
+#footerLinks{
+    padding-left: 37%;
+}
+
+.wh{color: #efefef; font-size: 28px;}
+
+.lead{color:#efefef;}
+
+.card{
+    width: 85% !important;
+    background-color: inherit; border: none;
+}
