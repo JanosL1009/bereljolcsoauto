@@ -19,15 +19,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('home','AdminController@home')->middleware('verified')->name('home');
+Route::get('loggingout','AdminController@adminlogout')->middleware('verified')->name('logout');
+
 Route::get('/index', 'HomeController@index')->name('index');
 
-Route::get('berelheto-szemelyautok-autokolcsonzes')->name('szemelyautok');
+Route::get('berelheto-szemelyautok-autokolcsonzes','HomeController@szemelyAutok')->name('szemelyautok');
 
 Route::get('berelheto-kisbuszok-kisbuszkolcsonzes')->name('kisbuszok');
 
 
 Route::get('a-bereljolcsonautot-autoberles-feltetelei','HomeController@berlesfeltetelek')->name('berlesfeltetelek');
 
-Route::get('autoberles-foglalas')->name('foglalas');
+Route::get('autoberles-foglalas','HomeController@FoglalasiUrlap')->name('foglalas');
 
-Route::get('elerhetoseg')->name('elerhetoseg');
+Route::post('autoberles-kolcsonzes-urlap','HomeController@UrlapFeldolgozo');
+
+Route::get('elerhetoseg','HomeController@kapcsolat')->name('elerhetoseg');
+
+Route::get('admin/ujautofelvitele','AdminController@ujautofelvitele')->middleware('verified');
+Route::post('admin/ujautofelvitele_feldolgozo','AdminController@uj_auto_feldolgozo')->middleware('verified');
+
+
+Route::get('admin/autok/lista','AdminController@autokszerkesztese')->middleware('verified');

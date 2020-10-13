@@ -7,8 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
- <i class="fa fa-deviantart" aria-hidden="true"></i>
+  <i class="fa fa-deviantart" aria-hidden="true"></i>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -20,6 +19,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bereljautot.css') }}" rel="stylesheet">
     <style>
+        body{
+            background-color: #0081DF;
+        }
         .site-header{
             background-color: rgba(25, 25, 98, 0.9) !important;
         }
@@ -33,21 +35,25 @@
 </head>
 <body class="egyedi_font">
     <div class="topfixed fixed-top">
-        <header class="site-header">
+        <header class="site-header" style="padding: 30px;">
             <div class="container sp-cont">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-8">
 
-						<h2 class="margin-top10"> <img src="https://www.bereljolcsoautot.hu/images/berelj-logo.png" style="max-height: 100px; margin: -10px 20px -10px;"><strong>Bérelj Olcsó Autót</strong> <span style="font-size:15px"> autóbérlés olcsón, autókölcsönzés Budapesten!</span></h2>
-                        <p></p>
-						<div class="azonnali">
+						<h2> <img src="https://www.bereljolcsoautot.hu/images/berelj-logo.png" style="max-height: 100px; margin: -10px 20px -10px;"><strong>Bérelj Olcsó Autót</strong> <span style="font-size:15px"> autóbérlés olcsón, autókölcsönzés Budapesten!</span></h2>
+
+
+                    </div>
+                    <div class="col-md-4">
+                        <div>
 							Telefon: <a href="tel:06707707063">06 70 770 70 63</a><br />
 							E-mail: <a href="mailto:bereljolcsonautot@gmail.com">bereljolcsonautot@gmail.com</a>
 						</div>
-					</div>
+                    </div>
 				</div>
             </div>
         </header>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-myColor ">
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto justify-content-center">
@@ -60,7 +66,7 @@
                     Bérelhető autóink
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Személyautók</a>
+                    <a class="dropdown-item" href="{{url('berelheto-szemelyautok-autokolcsonzes')}}">Személyautók</a>
                     <a class="dropdown-item" href="#">Kisbuszok</a>
                     <!--<div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a> -->
@@ -70,11 +76,31 @@
                     <a class="nav-link" href="{{url('a-bereljolcsonautot-autoberles-feltetelei')}}">Autóbérlés feltételei</a>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Foglalási űrlap</a>
+                  <a class="nav-link " href="{{url("autoberles-foglalas")}}">Foglalási űrlap</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Elérhetőség</a>
+                    <a class="nav-link " href="#">Elérhetőség</a>
                   </li>
+
+                  @auth
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Admin menüpontok
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Foglalások</a>
+                      <a class="dropdown-item" href="{{url('admin/ujautofelvitele')}}">Új autó felvétele</a>
+                      <a class="dropdown-item" href="{{url('admin/autok/lista')}}">Autók szerkesztése</a>
+                      <a class="dropdown-item" href="#">Bejegyzések</a>
+                      <a class="dropdown-item" href="{{url('loggingout')}}">Kijelentkezés</a>
+                      <!--<div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a> -->
+                    </div>
+                  </li>
+                  @endauth
+
+
+
               </ul>
 
             </div>
@@ -86,17 +112,17 @@
 
         <div class="row FooterColor" id="pageFooter ">
 
-               <div class="col-4 col-md-4 pt-5">
+               <div class="col-md-4 col-sm-12  pt-5">
                     <h4 class="newH4Color pt-2">OLDALAK</h4>
                     <ul class="list-unstyled" id="footerLinks">
                         <li><a class="footerLinkItem" href="#">Kezdőoldal</a></li>
                         <li><a class="footerLinkItem" href="#">Bérelhető autók</a></li>
                         <li><a class="footerLinkItem" href="{{url('a-bereljolcsonautot-autoberles-feltetelei')}}">Autóbérlés feltételei</a></li>
-                        <li><a class="footerLinkItem" href="#">Foglalási űrlap</a></li>
+                        <li><a class="footerLinkItem" href="{{url("autoberles-foglalas")}}">Foglalási űrlap</a></li>
                         <li><a class="footerLinkItem" href="#">Adatvédelmi tájékoztató</a></li>
                     </ul>
                </div>
-               <div class="col-4 col-md-4 pt-5">
+               <div class="col-md-4  col-sm-12 pt-5">
                     <h4  class="newH4Color">ELÉRHETŐSÉG</h4>
                     <p>
                         <svg class="bi" width="32" height="32" fill="currentColor">
@@ -104,7 +130,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="col-4 col-md-4 pt-5">
+                <div class="col-md-4  col-sm-12 pt-5">
                     <h4  class="newH4Color">FACEBOOK</h4>
                 </div>
 
