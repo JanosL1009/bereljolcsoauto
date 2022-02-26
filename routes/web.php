@@ -45,4 +45,8 @@ Route::get('admin/foglalas/{id}','AdminController@show_foglalas')->middleware('v
 
 Route::get('admin/autok/lista','AdminController@autokszerkesztese')->middleware('verified');
 
+Route::get('admin/bejegyzesek','AdminController@bejegyzesek')->middleware('verified')->name('bejegyzes.lista');
+Route::get('admin/bejegyzes/letrehozas','AdminController@bejegyzes_letrehozas')->middleware('verified')->name('bejegyzes.letrehozas');
+
+
 Route::get('sikeres-foglalas','HomeController@thanx')->name('koszonjuk');

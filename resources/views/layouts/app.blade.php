@@ -100,7 +100,7 @@
                       <a class="dropdown-item" href="{{route('foglalas.lista')}}">Foglalások</a>
                       <a class="dropdown-item" href="{{url('admin/ujautofelvitele')}}">Új autó felvétele</a>
                       <a class="dropdown-item" href="{{url('admin/autok/lista')}}">Autók szerkesztése</a>
-                      <a class="dropdown-item" href="#">Bejegyzések</a>
+                      <a class="dropdown-item" href="{{route('bejegyzes.lista')}}">Bejegyzések</a>
                       <a class="dropdown-item" href="{{url('loggingout')}}">Kijelentkezés</a>
                       <!--<div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Something else here</a> -->

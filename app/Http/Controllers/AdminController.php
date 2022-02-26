@@ -64,7 +64,12 @@ class AdminController extends Controller
 
     public function bejegyzesek()
     {
+        return view('admin.bejegyzes');
+    }
 
+    public function bejegyzes_letrehozas()
+    {
+        return view('admin.bejegyzes_letrehozasa');
     }
 
     public function foglalasok()
