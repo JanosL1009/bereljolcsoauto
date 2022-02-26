@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Autok;
 use App\AutokLeirasa;
 use App\Foglalas;
+use \Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -97,6 +98,22 @@ class HomeController extends Controller
         $foglalas->atvetelHelye = $autoAtvevesHelye;
         $foglalas->egyebIgeny = $Comments;
         $foglalas->save();
+        $from = env('MAIL_FROM_ADDRESS');
+        Mail::send('emails.foglalas', ['nev' =>$fogalaloNeve], function ($message) use ($Mail,$from) {
+            $message->to($Mail)
+           ->subject('Sikeres foglalás - Bérelj olcsón autót', 'Bérelj olcsón autót ')
+           ->from($from,'Bérelj olcsón autót');
+        });
+
+
+        Mail::send('emails.admin', ['nev' =>$fogalaloNeve], function ($message) use ($from) {
+            $message->to($from)
+           ->subject('Autó foglalás történt - Bérelj olcsón autót', 'Bérelj olcsón autót ')
+           ->from($from,'Bérelj olcsón autót');
+        });
+
+
+
         return view('koszonjukfoglalas');
     }
 

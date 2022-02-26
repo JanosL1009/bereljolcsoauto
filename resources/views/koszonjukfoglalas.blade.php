@@ -40,7 +40,7 @@
                             <section>
                                 <p>Autó foglalási szándékodat rögzítettük!</p>
                                 <p>A foglalásról egy igazoló e-mailt küldünk neked.</p>
-                                <p>Ha 10-15 percen belül nem érkezne meg a visszaigazoló e-mail, kéjük ellenőrizd a spam mappát is.
+                                <p>Ha 10-15 percen belül nem érkezne meg a visszaigazoló e-mail, kérjük ellenőrizd a spam mappát is.
                                     Amennyiben a spam mappában sem található kérjük, hogy telefonon keresztül vedd fel velünk a kapcsolatot
                                     és mi ellenőrzzük a foglalásod sikerességét.
                                 </p>
