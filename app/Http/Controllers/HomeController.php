@@ -107,7 +107,7 @@ class HomeController extends Controller
 
 
         Mail::send('emails.admin', ['nev' =>$fogalaloNeve], function ($message) use ($from) {
-            $message->to($from)
+            $message->to('bereljolcsonautot@gmail.com')
            ->subject('Autó foglalás történt - Bérelj olcsón autót', 'Bérelj olcsón autót ')
            ->from($from,'Bérelj olcsón autót');
         });
