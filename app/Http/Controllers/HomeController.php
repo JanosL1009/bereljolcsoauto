@@ -97,7 +97,7 @@ class HomeController extends Controller
         $foglalas->atvetelHelye = $autoAtvevesHelye;
         $foglalas->egyebIgeny = $Comments;
         $foglalas->save();
-        return view('koszonjuk');
+        return view('koszonjukfoglalas');
     }
 
     public function szemelyAutok()
@@ -105,6 +105,11 @@ class HomeController extends Controller
         $autok = Autok::where('aktiv',1)->get();
 
         return view("szemelyautok")->with('autok',$autok);
+    }
+
+    public function thanx()
+    {
+        return view('koszonjukfoglalas');
     }
 
     public function kapcsolat()

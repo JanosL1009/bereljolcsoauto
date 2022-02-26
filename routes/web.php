@@ -42,3 +42,5 @@ Route::post('admin/ujautofelvitele_feldolgozo','AdminController@uj_auto_feldolgo
 
 
 Route::get('admin/autok/lista','AdminController@autokszerkesztese')->middleware('verified');
+
+Route::get('sikeres-foglalas','HomeController@thanx')->name('koszonjuk');

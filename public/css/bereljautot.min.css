@@ -1,0 +1,54 @@
+
+/*My Style's*/.egyedi_font {font-family: 'Roboto', sans-serif;}
+.mainBody{background-color: #0081DF;} .FooterColor{background-color: #e1e1e1;}.footerLinkItem{color: #000; font-size: 14px;}
+.newH4Color{color: #FBC02D;font-weight: bolder; text-align: center;}
+#footerLinks{padding-left: 37%;} .wh{color: #efefef; font-size: 28px;} .lead{color:#efefef;} .card{width: 85% !important;background-color: inherit; border: none;}
+.sliderbox{height:612px;} /*.mainBody{margin-top:17%;}*/
+@media only screen and (max-width: 600px) {
+    /*.mainBody{margin-top: 70%;}*/
+        .sliderbox
+        {
+            height: 200px;
+        }
+
+       .footerLinkItem{
+            height: 48px;
+        }
+
+        #FejlecCim{
+            display: none !important;
+        }
+        #elerhetoseg{
+            padding-top: 3%;
+        }
+
+        .sliderbox img{
+            width: 100%;
+            height: 200px !important;
+        }
+
+  }
+  @media (orientation: portrait) {
+  /*  .mainBody{margin-top: 70%;}*/
+        .sliderbox
+        {
+            height: 200px;
+        }
+
+       .footerLinkItem{
+            height: 48px;
+        }
+
+        #FejlecCim{
+            display: none !important;
+        }
+        #elerhetoseg{
+            padding-top: 3%;
+        }
+
+        .sliderbox img{
+            width: 100%;
+            height: 200px !important;
+        }
+
+  }
