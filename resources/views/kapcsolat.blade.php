@@ -10,7 +10,7 @@
     <link rel="canonical" href=”https://www.bereljolcsoautot.hu/” />
     <meta name="og:site_name" content="www.bereljolcsoautot.hu"/>
     <meta name="og:type" content="Autóbérlés, bérautó, olcsó autókölcsönzés Budapest"/>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         hr{
             color: #fff; background-color: #fff;
@@ -34,6 +34,62 @@
         <div id="contact-map" style="width:100%;height: 300px; "></div>
     </div>
 </div>
+
+<div class="row mt-3">
+
+    <div class="col-md-2 col-sm-12">
+        <h3 id="autoberles-Elerhetoseg0"></h3>
+
+    </div>
+
+    <div class="col-md-8 col-sm-12">
+
+        <form class="form" action="{{asset('erdeklodes_autoberles_form')}}" method="POST" enctype="application/x-www-form-urlencoded">
+        @csrf
+            <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h3 id="autoberles-Elerhetoseg">Elérhetőség</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <h5 style="font-size: 15px;"><i class="fa fa-home" style="font-size:24px" title="Bérel olcsó autót irodája! Autóbérlés, autókölcsönzés Budapesten a Fehérvári úton!"></i>Bérelj olcsó autót!</h5>
+                <p>1116 Budapest,</p>
+                <p class="mt-0">Fehérvári út 108-112</p>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                    <input type="text" id="elnevezes" name="elnevezes" class="form-control" placeholder="Hogyan szólíthatjuk?*">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="autoberlo-emailcime" name="emailcim" class="form-control" placeholder="Az autót bérlő e-mail címe*">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="autoberlo-telefonszám" name="telfonszam" class="form-control" placeholder="Az autót bérlő telefonszáma*">
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="form-group">
+                    <textarea class="form-control" id="uzenet" name="uzenet" rows="5">
+
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary float-right float-md-none float-sm-none" value="ELKÜLDÉS" style="background-color: #ecc02d;">
+                </div>
+            </div>
+
+        </div>
+    </form>
+    </div>
+    <div class="col-md-2 col-sm-12">
+        <h3 id="autoberles-Elerhetoseg"></h3>
+    </div>
+</div>
+
+
 
 @endsection
 

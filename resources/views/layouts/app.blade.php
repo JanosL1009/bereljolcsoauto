@@ -136,7 +136,7 @@
                <div class="col-md-4  col-sm-12 pt-5">
                     <h4  class="newH4Color">ELÉRHETŐSÉG</h4>
                     <h5 class="footerLinkItem" style="font-size: 15px;padding-left: 30%;"><i class="fa fa-home" style="font-size:24px" title="Bérel olcsó autót irodája! Autóbérlés, autókölcsönzés Budapesten a Fehérvári úton!"></i>Bérelj olcsó autót!</h5>
-                    <p class="footerLinkItem" style="padding-left: 30%;">1106 Budapest,</p>
+                    <p class="footerLinkItem" style="padding-left: 30%;">1116 Budapest,</p>
                     <p class="mt-0" style="padding-left: 30%;color:#000;">Fehérvári út 108-112</p>
                 </div>
                 <div class="col-md-4  col-sm-12 pt-5">
