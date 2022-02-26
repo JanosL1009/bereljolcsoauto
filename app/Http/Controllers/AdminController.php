@@ -67,6 +67,20 @@ class AdminController extends Controller
 
     }
 
+    public function foglalasok()
+    {
+        $foglalasok = Foglalas::orderBy('created_at','DESC')->paginate(25);
+
+        return view('admin.foglalas')->with('foglalasok',$foglalasok);
+    }
+
+    public function show_foglalas(int $id)
+    {
+        $foglalas = Foglalas::find($id);
+
+        return view('admin.autofoglalas')->with('foglalas',$foglalas);
+    }
+
     public function adminlogout()
     {
         Auth::logout();

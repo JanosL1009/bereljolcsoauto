@@ -40,6 +40,8 @@ Route::get('elerhetoseg','HomeController@kapcsolat')->name('elerhetoseg');
 Route::get('admin/ujautofelvitele','AdminController@ujautofelvitele')->middleware('verified');
 Route::post('admin/ujautofelvitele_feldolgozo','AdminController@uj_auto_feldolgozo')->middleware('verified');
 
+Route::get('admin/foglalasok','AdminController@foglalasok')->middleware('verified')->name('foglalas.lista');
+Route::get('admin/foglalas/{id}','AdminController@show_foglalas')->middleware('verified')->name('foglalas.show');
 
 Route::get('admin/autok/lista','AdminController@autokszerkesztese')->middleware('verified');
 
