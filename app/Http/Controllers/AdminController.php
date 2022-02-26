@@ -8,8 +8,15 @@ use App\Autok;
 use App\AutokLeirasa;
 use App\Foglalas;
 use Illuminate\Support\Facades\Storage;
+use App\Bejegyzesek;
+use Illuminate\Support\Str;
 class AdminController extends Controller
 {
+
+    protected $seoKeys = "autóbérlés, bérautó, autóbérlés budapest,bérautó budapest, autókölcsönzés, autókölcsönzés budapest,ford autókölcsönzés, olcsó bérautó, olcsó autókölcsönzés, autókölcsönzés ferihegy";
+
+    protected $seodesc = "Olcsó autó bérlés Buapesten! A következő márkák közül válogathat: Ford, Wolksvagen, Mitsubishi, Citroen és mág sok más kölcsönözhető bérautó! ";
+
     public function home()
     {
         return view('home');
@@ -64,12 +71,66 @@ class AdminController extends Controller
 
     public function bejegyzesek()
     {
-        return view('admin.bejegyzes');
+        $bejegyzesek = Bejegyzesek::paginate(25);
+
+        return view('admin.bejegyzes')->with('bejegyzesek',$bejegyzesek);
     }
 
     public function bejegyzes_letrehozas()
     {
         return view('admin.bejegyzes_letrehozasa');
+    }
+
+    public function bejegyzes_letrehozas_post(Request $request)
+    {
+        $request->validate([
+            'cim' => 'required',
+            'status' => 'required',
+            'editordata' => 'required'
+        ]);
+
+        $bejegyzes = new Bejegyzesek();
+        $bejegyzes->cim = $request->input('cim')??"Nincs kitöltve";
+        $bejegyzes->slug = Str::slug($bejegyzes->cim);
+        $bejegyzes->aktiv = (int)$request->input('status')??0;
+        $bejegyzes->tartalom = $request->input('editordata')??"Nincs kitöltve";
+        $bejegyzes->seokeywords = $request->input('seokeys')??$this->seoKeys;
+        $bejegyzes->seodesc = $request->input('seodesc')??$this->seodesc;
+
+        $bejegyzes->save();
+
+        return redirect()->route('bejegyzes.lista');
+
+    }
+
+    public function bejegyzes_szerkesztes(int $id)
+    {
+        $bejegyzes = Bejegyzesek::find($id);
+
+        return  view('admin.bejegyzes_szerkesztes')->with('bejegyzes',$bejegyzes)->with('postId',$id);
+    }
+
+    public function bejegyzes_szerkesztes_post(Request $request)
+    {
+        $request->validate([
+            'postid' => 'required',
+            'cim' => 'required',
+            'status' => 'required',
+            'editordata' => 'required'
+        ]);
+
+        $id = (int)$request->input('postid');
+        $bejegyzes = Bejegyzesek::find($id);
+        $bejegyzes->cim = $request->input('cim')??"Nincs kitöltve";
+        $bejegyzes->slug = Str::slug($bejegyzes->cim);
+        $bejegyzes->aktiv = (int)$request->input('status')??0;
+        $bejegyzes->tartalom = $request->input('editordata')??"Nincs kitöltve";
+        $bejegyzes->seokeywords = $request->input('seokeys')??$this->seoKeys;
+        $bejegyzes->seodesc = $request->input('seodesc')??$this->seodesc;
+
+        $bejegyzes->save();
+
+        return  back();
     }
 
     public function foglalasok()

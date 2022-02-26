@@ -31,13 +31,15 @@
 
                       <tbody class="table-light">
 
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="text-center"><a href=""><ion-icon name="eye"></ion-icon></a></td>
-                            </tr>
 
+                            @foreach ($bejegyzesek as $bejegyzes)
+                            <tr>
+                                <td>{{$bejegyzes->id}}</td>
+                                <td>{{$bejegyzes->cim}}</td>
+                                <td>{{$bejegyzes->created_at}}</td>
+                                <td class="text-center"><a href="{{route('bejegyzes.szerkesztes',[ 'id' => $bejegyzes->id])}}"><ion-icon name="pencil"></ion-icon></a></td>
+                            </tr>
+                            @endforeach
 
 
 

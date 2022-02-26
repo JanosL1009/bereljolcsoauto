@@ -16,36 +16,39 @@
     <div class="col-12 col-md-12">
         <div class="card">
             <div class="card-body">
-                <h1>Bejegyzés létrehozása</h1>
+                <h1>Bejegyzés szerkesztése</h1>
 
-                <form method="post" action="{{ route('bejegyzes.letrehozas.post')}}">
+                <form method="post" action="{{ route('bejegyzes.szerkesztes.post')}}">
                     @csrf
+                    <input type="hidden" class="form-control" id="postid" name="postid" value="{{$postId??0}}">
                     <div class="form-group">
                         <label for="cim">Cím</label>
-                        <input type="text" class="form-control" id="cim" name="cim">
+                        <input type="text" class="form-control" id="cim" name="cim" value="{{$bejegyzes->cim}}">
                      </div>
 
                      <div class="form-group">
                         <label for="tartalom">Tartalom</label>
-                        <textarea id="example"  name="editordata"></textarea>
+                        <textarea id="example"  name="editordata">
+                            {!! $bejegyzes->tartalom !!}
+                        </textarea>
                      </div>
 
                      <div class="form-group">
                         <label for="cim">Státusz</label>
                         <select id="status" name="status"  class="form-control">
                             <option value="0" selected>Piszkozat</option>
-                            <option value="1">Élő</option>
+                            <option value="1" @if($bejegyzes->aktiv == 1) selected @endif>Élő</option>
                         </select>
                      </div>
 
                      <div class="form-group">
                         <label for="cim">SEO kulcsszavak</label>
-                        <input type="text" class="form-control" id="seokeys" name="seokeys">
+                        <input type="text" class="form-control" id="seokeys" name="seokeys" value="{{$bejegyzes->seokeywords}}">
                      </div>
 
                      <div class="form-group">
                         <label for="cim">SEO leírás (röviden! max.5 mondat)</label>
-                        <input type="text" class="form-control" id="seodesc" name="seodesc">
+                        <input type="text" class="form-control" id="seodesc" name="seodesc" value="{{$bejegyzes->seodesc}}">
                      </div>
 
                      <div class="form-group">

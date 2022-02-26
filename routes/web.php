@@ -47,6 +47,10 @@ Route::get('admin/autok/lista','AdminController@autokszerkesztese')->middleware(
 
 Route::get('admin/bejegyzesek','AdminController@bejegyzesek')->middleware('verified')->name('bejegyzes.lista');
 Route::get('admin/bejegyzes/letrehozas','AdminController@bejegyzes_letrehozas')->middleware('verified')->name('bejegyzes.letrehozas');
+Route::post('admin/bejegyzes/letrehozas/post','AdminController@bejegyzes_letrehozas_post')->middleware('verified')->name('bejegyzes.letrehozas.post');
+
+Route::get('admin/bejegyzes/szerkesztes/{id}','AdminController@bejegyzes_szerkesztes')->middleware('verified')->name('bejegyzes.szerkesztes');
+Route::post('admin/bejegyzes/szerkesztes/post','AdminController@bejegyzes_szerkesztes_post')->middleware('verified')->name('bejegyzes.szerkesztes.post');
 
 
 Route::get('sikeres-foglalas','HomeController@thanx')->name('koszonjuk');
