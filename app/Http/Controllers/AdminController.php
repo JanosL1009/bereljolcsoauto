@@ -59,6 +59,52 @@ class AdminController extends Controller
 
     }
 
+    /****
+     * GET
+     * Egy auto modositasa
+     */
+    public function autoszerkesztes(int $AutoID)
+    {
+        $auto = Autok::find($AutoID);
+        return view('admin.egy_autoszerkesztese')->with('auto',$auto);
+    }
+
+    public function automodosito_feldolgozo(Request $request)
+    {
+        $autoID = (int)$request->input('autoid');
+        $ujAuto = Autok::find($autoID);
+        $ujAuto->autonev = $request->input('autonev');
+        $ujAuto->uzemanyag = intval($request->input('uzemanyag'));
+        $ujAuto->elektromosAblakEmelo = intval($request->input('ablakemelo'));
+        $ujAuto->ajtokSzama = intval($request->input('ajtokszama'));
+        $ujAuto->klima = intval($request->input('klima'));
+        $ujAuto->sebessegvalto = intval($request->input('sebvalto'));
+        $ujAuto->ara = intval($request->input('autoara'));
+        $ujAuto->aktiv = intval($request->input('allapot'));
+
+
+
+       // dd($file->getClientOriginalName());
+       if($request->has('kep'))
+       {
+        $file = $request->file('kep');
+
+        Storage::disk('public_uploads')->put('kepek', $file,$file->getClientOriginalName());
+
+        $ujAuto->kep = $file->getClientOriginalName();
+
+       }
+
+        $ujAuto->save();
+
+       /* $autoLeiras = new AutokLeirasa();
+        $autoLeiras->autok_id = $ujAuto->id;
+        $autoLeiras->tartalom = $request->input('editor');
+        $autoLeiras->save();*/
+
+        return back()->withErrors('A módosítas sikeres!','success');
+    }
+
     /**
      * Gyujto oldal
      */

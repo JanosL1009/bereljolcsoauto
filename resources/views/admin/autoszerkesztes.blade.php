@@ -19,7 +19,7 @@
                             @foreach($autok as $auto)
                                 <tr>
                                     <td>{{$auto->autonev}}</td>
-                                    <td><a href="#">Módosítás</a></td>
+                                    <td><a href="{{route('Auto.Modositas',[ "AutoID" => $auto->id])}}">Módosítás</a></td>
                                 </tr>
                             @endforeach
 

@@ -46,6 +46,9 @@ Route::get('admin/foglalas/{id}','AdminController@show_foglalas')->middleware('v
 
 Route::get('admin/autok/lista','AdminController@autokszerkesztese')->middleware('verified');
 
+Route::get('admin/automodositasa/{AutoID}','AdminController@autoszerkesztes')->middleware('verified')->name('Auto.Modositas');
+Route::post('admin/automodositasa_feldolgozo','AdminController@automodosito_feldolgozo')->middleware('verified')->name('Auto.Modositas.Post');
+
 Route::get('admin/bejegyzesek','AdminController@bejegyzesek')->middleware('verified')->name('bejegyzes.lista');
 Route::get('admin/bejegyzes/letrehozas','AdminController@bejegyzes_letrehozas')->middleware('verified')->name('bejegyzes.letrehozas');
 Route::post('admin/bejegyzes/letrehozas/post','AdminController@bejegyzes_letrehozas_post')->middleware('verified')->name('bejegyzes.letrehozas.post');
