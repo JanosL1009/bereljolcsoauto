@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Autok;
 use App\AutokLeirasa;
+use App\Bejegyzesek;
 use App\Foglalas;
 use \Illuminate\Support\Facades\Mail;
 
@@ -117,11 +118,18 @@ class HomeController extends Controller
         return view('koszonjukfoglalas');
     }
 
+    public function show_bejegyzes(string $slug)
+    {
+        $bejegyzes = Bejegyzesek::where('slug',$slug)->first();
+        $bejegyzesek = Bejegyzesek::orderBy('created_at','DESC')->paginate(5);
+        return view('bejegyzes-front-end')->with('bejegyzes',$bejegyzes)->with('bejegyzesek',$bejegyzesek);
+    }
+
     public function szemelyAutok()
     {
         $autok = Autok::where('aktiv',1)->get();
-
-        return view("szemelyautok")->with('autok',$autok);
+        $bejegyzesek = Bejegyzesek::orderBy('created_at','DESC')->paginate(5);
+        return view("szemelyautok")->with('autok',$autok)->with('bejegyzesek',$bejegyzesek);
     }
 
     public function thanx()

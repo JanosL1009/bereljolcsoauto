@@ -28,6 +28,7 @@ Route::get('berelheto-szemelyautok-autokolcsonzes','HomeController@szemelyAutok'
 
 Route::get('berelheto-kisbuszok-kisbuszkolcsonzes')->name('kisbuszok');
 
+Route::get('autoberles/bejegyzesek/{slug}','HomeController@show_bejegyzes')->name('Bejegyzes.FrontEnd');
 
 Route::get('a-bereljolcsonautot-autoberles-feltetelei','HomeController@berlesfeltetelek')->name('berlesfeltetelek');
 
