@@ -21,7 +21,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-6 col-md-6">
+    <div class="col-12 col-md-6 col-sm-12 col-xs-12">
         <div class="card" style="padding-left: 17%;">
             <h1 class="uppercase strong">Kedves Leendő Ügyfelünk,</h1>
 						<p>az  <strong>autóbérlés</strong> folyamata a következő:</p>
@@ -49,7 +49,7 @@
 
     </div>
 
-    <div class="col-6 col-md-6">
+    <div class="col-12 col-md-6 col-sm-12 col-xs-12">
         <div class="accordion" id="accordionExample" style="color: #000;">
             <div class="card" style="background-color: #FFF;color:#000;">
 

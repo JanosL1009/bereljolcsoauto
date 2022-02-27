@@ -2,15 +2,15 @@
 
 @section('head-seo')
     <title>Bérelj olcsón autót</title>
-    <meta name="description" content="Olcsó autóbérlés, autókölcsönzés Budapesten! Bérelhető autóink között találhat Mercedest, Fordot, Opelt, Peugeot, Suzukit és sok más márkát, valamint kategóriát!"/>
-    <meta name="keywords" content="autóbérlés budapest,autókölcsönzés,autókölcsönzés Budapeset,bérautó,bérautó Budapest"/>
+    <meta name="description" content="Olcsó autóbérlés, autókölcsönzés Budapesten! Bérelhető autóink között találhat Mercedest, Fordot, Opelt, Peugeot, Suzukit és sok más márkát, valamint kategóriát!">
+    <meta name="keywords" content="autóbérlés budapest,autókölcsönzés,autókölcsönzés Budapeset,bérautó,bérautó Budapest">
 
     <meta name="author" content="Berelj olcsó Autót 2020">
     <meta name="robots" content="index,follow" />
     <link rel=”canonical” href=”https://www.bereljolcsoautot.hu/” />
     <meta name="og:site_name" content="www.bereljolcsoautot.hu"/>
     <meta name="og:type" content="Autóbérlés, bérautó, olcsó autókölcsönzés Budapest"/>
-
+    <link rel="canonical" href="{{asset('berelheto-szemelyautok-autokolcsonzes')}}" />
 
 
     @endsection
@@ -23,24 +23,24 @@
 @endsection
 
 @section('content')
-<div class="mt-n4" style="width:100%; height:612px" data-simple-slider>
-    <img src="https://www.bereljolcsoautot.hu/images/slider-03.jpg"/>
-    <img src="https://www.bereljolcsoautot.hu/images/slider-02.jpg"/>
-    <img src="https://www.bereljolcsoautot.hu/images/slider-05.jpg"/>
-  </div>
+<div class="mt-n4 sliderbox" style="width:100%;" data-simple-slider>
+    <img src="https://www.bereljolcsoautot.hu/images/slider-02.jpg" alt="autoberles-budapesten-bereljolcsonautot"/>
+    <img src="{{asset('kepek/bereljolcsoautot-autoberles-budapesten-fehervari-uton-2020.webp')}}" alt="autokolcsonzes-budapest-autoberles-fehervari-ut"/>
+    <img src="https://www.bereljolcsoautot.hu/images/slider-05.jpg" alt="berauto-autokolcsonzes-olcso-autoberles"/>
+</div>
 
   <div class="row">
-    <section class="col-6 col-md-6 mt-3">
+    <section class="col-md-6 col-sm-12 mt-3">
         <div class="card container justify-content-center">
             <h1 class="wh"><strong>ÜDVÖZÖLJÜK A BÉRELJ OLCSÓ AUTÓT OLDALÁN!</strong></h1>
             <p class="lead" style="font-size: 21px;">Amennyiben szeretne kedvező áron, <strong>olcsón autót bérelni Budapesten</strong>, vagy csak érdeklődik a  <strong>bérautók </strong> és az  <strong>autóbérlés </strong> iránt, forduljon hozzánk Bizalommal.</p>
         </div>
     </section>
-    <section class="col-6 col-md-6 mt-3">
+    <section class="col-md-6 col-sm-12 mt-3">
         <div class="card container justify-content-center">
             <p   style="color: #efefef;">Ha az <strong>autókölcsönzés</strong> folyamata érdekli is szívesen állunk rendelkezésére.</p>
             <p  style="color: #efefef;">Célunk, hogy lehető legegyszerűbbé tegyük az <strong>autóbérlés</strong> menetét, és hogy az olyan fogalmak, mint az <strong>olcsó autóbérlés, autókölcsönzés</strong> a gyakorlatban is megvalósulhassanak.</p>
-            <img src="{{asset('kepek/bereljolcsoautot-autoberles-berauto-2020.jpg')}}" width="200px" alt="autobérlés-budapesten" title="Bérelj olcsó autót és már adjuk a kulcsot!">
+            <img src="{{asset('kepek/bereljolcsoautot-autoberles-berauto-2020.webp')}}" width="200px" height="133px" alt="autobérlés-budapesten" title="Bérelj olcsó autót és már adjuk a kulcsot!">
         </div>
     </section>
   </div>

@@ -89,6 +89,15 @@ függően- egyedi árajánlattal szolgálunk az Ön részére.</p>
         </div>
         <div class="col-md-3 col-sm-12">
             <h3 id="autoberles-bejegyzesek-cikkek" title="Autóbérlés és autokölcsönzéssel kapcsolatos cikkek">Bejegyzések, cikkek</h3>
+            <table>
+                <tbody>
+                    @foreach ($bejegyzesek as $b)
+                        <tr>
+                            <td><a href="{{route('Bejegyzes.FrontEnd',['slug' => $b->slug])}}"  class="btn btn-primary">{{$b->cim}}</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 
