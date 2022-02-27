@@ -75,7 +75,7 @@ függően- egyedi árajánlattal szolgálunk az Ön részére.</p>
                                     <li  class="list-group-item">üzemanyag: @if($auto->uzemanyag == 0) {{ __('benzin') }} @else {{ __('dízel') }} @endif</li>
                                     <li  class="list-group-item">elektromos ablakemelő: @if($auto->elektromosAblakEmelo == 0) {{ __('nem') }} @else {{ __('igen') }} @endif</li>
                                     <li  class="list-group-item"> klíma: @if($auto->klima == 0) {{ __('nincs') }} @else {{ __('van') }} @endif</li>
-                                    <li  class="list-group-item"> sebességváltó: @if($auto->uzemanyag == 0) {{ __('manuális') }} @else {{ __('automata') }} @endif</li>
+                                    <li  class="list-group-item"> sebességváltó: @if($auto->sebessegValto == 0) {{ __('manuális') }} @else {{ __('automata') }} @endif</li>
                                 </ul>
                         </div>
                     </div>
