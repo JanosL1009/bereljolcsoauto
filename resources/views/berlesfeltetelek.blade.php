@@ -23,26 +23,8 @@
 <div class="row">
     <div class="col-12 col-md-6 col-sm-12 col-xs-12">
         <div class="card" style="padding-left: 17%;">
-            <h1 class="uppercase strong">Kedves Leendő Ügyfelünk,</h1>
-						<p>az  <strong>autóbérlés</strong> folyamata a következő:</p>
-						<p>Az Önnek leginkább megfelelő <strong>bérautó</strong> kiválasztása után az elsődleges teendő az <strong>autóbérléshez</strong> az adatok eljuttatása részünkre (online rendelő, email). Az <strong>autókölcsönzés</strong> visszaigazolása történhet mailen vagy telefonon keresztül, ahogy Önnek a legmegfelelőbb.</p>
-						<p> A <strong>bérautó átvétele</strong> vagy a telephelyünkön (1116 Budapest Fehérvári út 108-112) alatt, vagy az Ön által megjelölt helyszínen és időpontban történik, ez utóbbi 4000 Ft kiszállítási díj ellenében Budapest területén belül. A reptéri kiszállítás és visszaszállítás díja transzferrel együtt 5000 Ft.  (A Budapest területén kívüli bérautó átadás külön egyeztetést igényel!) </p>
-						<p>Az <strong>autóbérléshez</strong> szükséges iratok listáját a mellékelt táblázat tartalmazza.</p>
-						<p>A <strong>bérleti</strong> díj és az egyéb költségek rendezése az autó átvételekor történik készpénzben.</p>
-						<p>Egyéb költség alatt, igénylés esetén az autópálya matrica (díja kettőezer forint), illetve az üzemanyag és takarítási letét értendő. Ez utóbbi természetesen visszajár Önnek, feltétele, hogy a <strong>bérautó</strong> leadásakor az üzemanyagszint és a tisztasági állapot megegyezzen a kiadáskorival.</p>
+                {!! $oldal->tartalom !!}
 
-						<p>(Arra is van lehetőség természetesen, hogy esetleges idő hiányában az autó ne tiszta állapotban kerüljön vissza. Ebben az esetben 3000 Ft takarítási költség kerül levonásra.)</p>
-						<p>Az üzemanyag és takarítási letét mértéke a következő:</p>
-						<ul>
-							<ol>Kiskategóriás <strong>bérautóknál</strong> 15000 Ft</ol>
-							<ol>Középkategóriás <strong>bérautóknál</strong> 20000 FT</ol>
-							<ol>Egyterű járműveknél, teherautóknál és kisbuszoknál 25000 Ft.</ol>
-						</ul>
-						<p>Ezen felül Önnek sem teendője, sem költsége nincs az <strong>autóbérlés</strong> vonatkozásában.</p>
-						<p>(Esetlegesen felmerülő, <strong>autókölcsönzéssel</strong> kapcsolatos kérdéseivel kapcsolatosan hívja ügyfélszolgálatunkat, ahol készséggel állunk rendelkezésére 8 és 18 óra között.)</p>
-						<p>Bízva abban, hogy feltételeink megfelelnek az Ön által támasztott igényeknek és elvárásoknak, reméljük, hogy hamarosan elégedett ügyfeleink táborában köszönthetjük Önt.</p>
-						<p>Üdvözlettel:</p>
-						<p>A <strong>Bérelj Olcsó Autót</strong> csapata</p>
         </div>
 
 

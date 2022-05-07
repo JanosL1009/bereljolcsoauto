@@ -7,6 +7,7 @@ use App\Autok;
 use App\AutokLeirasa;
 use App\Bejegyzesek;
 use App\Foglalas;
+use App\Oldalak;
 use \Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -33,7 +34,8 @@ class HomeController extends Controller
 
     public function berlesfeltetelek()
     {
-        return view('berlesfeltetelek');
+        $oldal = Oldalak::find(1);
+        return view('berlesfeltetelek')->with('oldal',$oldal);
     }
 
     public function FoglalasiUrlap()
@@ -117,6 +119,12 @@ class HomeController extends Controller
 
         return view('koszonjukfoglalas');
     }
+  
+  public function hirek()
+  {
+    $bejegyzesek = Bejegyzesek::orderBy('created_at','DESC')->paginate(15);
+    return view('hirek-front-end')->with('bejegyzesek',$bejegyzesek);
+  }
 
     public function show_bejegyzes(string $slug)
     {
@@ -127,7 +135,7 @@ class HomeController extends Controller
 
     public function szemelyAutok()
     {
-        $autok = Autok::where('aktiv',1)->get();
+        $autok = Autok::where('aktiv',1)->orderBy('ara','ASC')->get();
         $bejegyzesek = Bejegyzesek::orderBy('created_at','DESC')->paginate(5);
         return view("szemelyautok")->with('autok',$autok)->with('bejegyzesek',$bejegyzesek);
     }

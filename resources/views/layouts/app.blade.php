@@ -87,6 +87,10 @@
                 <li class="nav-item">
                   <a class="nav-link " href="{{url("autoberles-foglalas")}}">Foglalási űrlap</a>
                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link " href="{{route("hirek")}}">Hírek</a>
+                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link " href="{{url("elerhetoseg")}}">Elérhetőség</a>
                   </li>
@@ -101,6 +105,7 @@
                       <a class="dropdown-item" href="{{url('admin/ujautofelvitele')}}">Új autó felvétele</a>
                       <a class="dropdown-item" href="{{url('admin/autok/lista')}}">Autók szerkesztése</a>
                       <a class="dropdown-item" href="{{route('bejegyzes.lista')}}">Bejegyzések</a>
+                      <a class="dropdown-item" href="{{route('oldal.lista')}}">Oldalak</a>
                       <a class="dropdown-item" href="{{url('loggingout')}}">Kijelentkezés</a>
                       <!--<div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Something else here</a> -->

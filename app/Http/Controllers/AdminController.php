@@ -9,7 +9,9 @@ use App\AutokLeirasa;
 use App\Foglalas;
 use Illuminate\Support\Facades\Storage;
 use App\Bejegyzesek;
+use App\Oldalak;
 use Illuminate\Support\Str;
+
 class AdminController extends Controller
 {
 
@@ -43,9 +45,11 @@ class AdminController extends Controller
         $ujAuto->aktiv = intval($request->input('allapot'));
 
 
+
         $file = $request->file('kep');
        // dd($file->getClientOriginalName());
-       Storage::disk('public_uploads')->put('kepek', $file,$file->getClientOriginalName());
+      	$file->move('/home/bereljolcs/domains/bereljolcsoautot.hu/private_html/kepek',$file->getClientOriginalName());
+      // Storage::disk('public_uploads')->put('kepek', $file,$file->getClientOriginalName());
 
         $ujAuto->kep = $file->getClientOriginalName();
         $ujAuto->save();
@@ -89,7 +93,8 @@ class AdminController extends Controller
        {
         $file = $request->file('kep');
 
-        Storage::disk('public_uploads')->put('kepek', $file,$file->getClientOriginalName());
+         $file->move('/home/bereljolcs/domains/bereljolcsoautot.hu/private_html/kepek',$file->getClientOriginalName());
+        //Storage::disk('public_uploads')->put('kepek', $file,$file->getClientOriginalName());
 
         $ujAuto->kep = $file->getClientOriginalName();
 
@@ -191,6 +196,52 @@ class AdminController extends Controller
         $foglalas = Foglalas::find($id);
 
         return view('admin.autofoglalas')->with('foglalas',$foglalas);
+    }
+
+    public function foglalas_torlese(Request $request,int $foglalasID)
+    {
+        $foglalasID = $foglalasID;
+
+        $foglalas = Foglalas::find($foglalasID);
+
+        $foglalas->delete();
+
+        return back();
+    }
+
+
+    public function oldalak()
+    {
+        $oldalak = Oldalak::all();
+
+        return view('admin.oldalak')->with('oldalak',$oldalak);
+    }
+
+    public function oldalSzerkesztes(int $OldalID){
+        $oldal = Oldalak::find($OldalID);
+
+        return view('admin.oldal_szerkesztes')->with('oldal',$oldal);
+    }
+
+    public function oldalSzerkesztesFeldolgozo(Request $request)
+    {
+        $oldalID = $request->input('oldalid');
+
+        $oldal = Oldalak::find($oldalID);
+        $oldal->tartalom = $request->input('editordata');
+
+        $oldal->save();
+
+        return back()->withErrors('Sikerem oldal módosítás.','success');
+    }
+
+
+    public function auto_torles(Request $request)
+    {
+        $carID = $request->input('carid');
+        $auto = Autok::find($carID);
+        $auto->delete();
+        return back();
     }
 
     public function adminlogout()

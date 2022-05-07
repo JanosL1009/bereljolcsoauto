@@ -48,7 +48,7 @@
   <div class="row">
     <section class="col-12 col-md-12 mt-3">
         <div class="card " style="padding-left: 5%;">
-           <h2 class="text-uppercase">Autót bérelne? roduljon hozzánk!</h2>
+           <h2 class="text-uppercase">Autót bérelne? Forduljon hozzánk!</h2>
            <p> Kérjük, tekintse meg  <strong>bérautó </strong> kínálatunkat, válassza ki az Önnek leginkább megfelelő <strong>bérautót</strong>, majd online rendelőnkön, vagy mailben küldje el foglalását a szükséges adatok megadásával.</p>
                 <p>
                     Természetesen bármilyen kérdése merülne fel az <strong>autókölcsönzéssel</strong> kapcsolatosan, telefonos ügyfélszolgálati számunkon kollégáink teljes körű felvilágosítással szolgálnak az <strong>autóbérlés</strong> folyamatát illetően.

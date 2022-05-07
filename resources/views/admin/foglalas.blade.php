@@ -29,7 +29,9 @@
                                 <td>{{ $foglalas->email}}</td>
                                 <td>{{ $foglalas->telefon}}</td>
                                 <td>{{ $foglalas->created_at}}</td>
-                                <td class="text-center"><a href="{{route('foglalas.show',[ 'id' => $foglalas->id])}}"><ion-icon name="eye"></ion-icon></a></td>
+                                <td class="text-center"><a href="{{route('foglalas.show',[ 'id' => $foglalas->id])}}"><ion-icon name="eye"></ion-icon></a>
+                                    <a href="{{route('Foglalas.Torles',[ 'foglalasID' => $foglalas->id])}}"><ion-icon name="trash" style="color: red;"></ion-icon></a>
+                                </td>
                             </tr>
                             @endforeach
 
