@@ -5,9 +5,14 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-<!-- froala editor -->
-<link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<style>
+    .ck-editor__editable_inline {
+        min-height: 500px;
+        color: black;
+    }
+ </style>
 @section('content')
 
 
@@ -27,7 +32,7 @@
 
                      <div class="form-group">
                         <label for="tartalom">Tartalom</label>
-                        <textarea id="example"  name="editordata"></textarea>
+                        <textarea id="example"  name="editordata" ></textarea>
                      </div>
 
                      <div class="form-group">
@@ -65,8 +70,15 @@
 </div>
 
 <script>
-    var editor = new FroalaEditor('#example',{
-    height: 500
-  });
+
+  ClassicEditor
+    .create( document.querySelector( '#example' ) )
+    .then( editor => {
+        console.log( editor );
+
+    } )
+    .catch( error => {
+        console.error( error );
+    } );
 </script>
 @endsection
